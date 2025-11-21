@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Plantilla fetch</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+        fetch("01-curriculum.json")
+        .then(function(respuesta){
+            return respuesta.json(); // La informacion vienen en json
+        }
+    )
+        .then(function(datos){
+            console.log(datos); // Vomitamos en la consola
+        }
+    )
+    </script>
+    
+</body>
+</html>
