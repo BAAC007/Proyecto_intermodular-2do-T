@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Plantilla fetch</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>--nombre--</h1>
+    <h2>--apellidos--</h2>
+    <h3>--email--</h3>
+    <h4>--telefono--</h4>
+    <h5>--direccion--</h5>
+    <h6>--codigo_postal--</h6>
+    <script>
+        fetch("curriculum.json")
+        .then(function(respuesta){
+            return respuesta.json(); // La informacion vienen en json
+        }
+    )
+        .then(function(datos){
+            console.log(datos); // Vomitamos en la consola
+
+            document.querySelector("h1").textContent = datos.datos_personales.nombre
+            document.querySelector("h2").textContent = datos.datos_personales.apellidos
+            document.querySelector("h3").textContent = datos.datos_personales.email
+            document.querySelector("h4").textContent = datos.datos_personales.telefono
+            document.querySelector("h5").textContent = datos.datos_personales.direccion
+            document.querySelector("h6").textContent = datos.datos_personales.codigo_postal
+        }
+    )
+    </script>
+    
+</body>
+<footer>
+    <p id="p1">--Experiencia1--</p>
+    <p id="p2">--Experiencia2--</p>
+    <p id="p3">--formacion--</p>
+
+    <script>
+        fetch("static/01-curriculum.json")
+        .then(function(respuesta){
+            return respuesta.json(); // La informacion vienen en json
+        }
+    )
+        .then(function(datos){
+            console.log(datos); // Vomitamos en la consola
+
+            document.querySelector("#p1").textContent = datos.experiencia_laboral.experiencia1
+            document.querySelector("#p2").textContent = datos.experiencia_laboral.experiencia2
+            document.querySelector("#p3").textContent = datos.formacion
+        }
+    )
+    </script>
+</footer>
+</html>

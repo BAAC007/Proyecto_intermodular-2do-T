@@ -1,0 +1,15 @@
+{
+  "datos_personales":{
+    "nombre":"Bryan Alejandro",
+    "apellidos":"Avila Castro",
+    "email":"info@Avila.com",
+    "telefono":"620891718",
+    "direccion":"La calle de bryan",
+    "codigo_postal":"46000 Valencia"
+  },
+  "experiencia_laboral":[
+    "experiencia1",
+    "experiencia2"
+  ],
+  "formacion":"escuela"
+}
