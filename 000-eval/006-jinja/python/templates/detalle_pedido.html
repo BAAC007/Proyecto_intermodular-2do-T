@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalle Pedido #{{ lineas[0].id_pedido if lineas else id_pedido }}</title>
+</head>
+<body>
+    <h1>📋 Detalle del Pedido #{{ id_pedido }}</h1>
+    <p><a href="/pedidos">← Volver a pedidos</a></p>
+    {% if lineas %}
+        <ul>
+        {% for l in lineas %}
+            <li>{{ l.cantidad }} x {{ l.nombre_producto }} ({{ "%.2f"|format(l.precio_unitario) }} €) = {{ "%.2f"|format(l.subtotal) }} €</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron líneas para este pedido.</p>
+    {% endif %}
+</body>
+</html>
